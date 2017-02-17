@@ -15,7 +15,7 @@ angular.module('app')
 }]);
 
 angular.module('app')
-  .controller('FormationInfoCtrl', ['$scope','ServiceFormation2',function ($scope,ServiceFormation2) {
+  .controller('FormationInfoCtrl', ['$scope', '$http', 'ServiceFormation2',function ($scope,$http,ServiceFormation2) {
 
   	$scope.formation = null;
   	ServiceFormation2.getOneFormation(function (data) {
@@ -41,5 +41,19 @@ angular.module('app')
 				break;
 		}
 	});
+
+	$scope.deleteFormation = function(codeFormation) {
+						console.log("hiiiiiii");
+						var clientUrl = '/formations/delete/'+codeFormation;
+						var request = $http({
+							method : "DELETE",
+							url : clientUrl
+							// data : $scope.data
+						});
+						request.success(
+								function(response) {
+							console.log(response);
+						});
+					}
 
 }]);

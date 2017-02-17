@@ -10,6 +10,9 @@ angular.module('app')
 	};
 }]);
 
+
+
+
 angular.module('app')
   .controller('FormationMainCtrl', ['$scope','ServiceFormation',function ($scope, ServiceFormation) {
 

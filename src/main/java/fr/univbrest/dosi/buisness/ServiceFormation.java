@@ -29,21 +29,20 @@ public class ServiceFormation implements FormationInterface {
 	}
 
 	@Override
-	public String DeleteFormation(String codeFormation) {
-		Formation formationTobeDeleted = formationRepo.findByCodeFormation(codeFormation);
-		formationRepo.delete(formationTobeDeleted);
-		return "Done";
+	public void DeleteFormation(String codeFormation) {
+		formationRepo.delete(codeFormation);
+		
 	}
 
 	@Override
-	public Formation updateFormation(String codeFormation, Formation formation) {
-		DeleteFormation(codeFormation);
-		formationRepo.save(formation);
-		return formationRepo.findByCodeFormation(formation.getCodeFormation());
+	public Formation updateFormation(Formation formation) {
+		return formationRepo.save(formation);
 	}
 
 	@Override
 	public Formation ajouterFormation(Formation formation) {
 		return formationRepo.save(formation);
 	}
+
+	
 }

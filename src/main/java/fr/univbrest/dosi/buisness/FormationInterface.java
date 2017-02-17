@@ -10,9 +10,9 @@ public interface FormationInterface {
 
 	public Formation getFormationByCodeFormation(String codeFormation);
 
-	public String DeleteFormation(String codeFormation);
+	public void DeleteFormation(String codeFormation);
 
-	public Formation updateFormation(String codeFormation, Formation formation);
+	public Formation updateFormation( Formation formation);
 	
 	public Formation ajouterFormation(Formation formation);
 }

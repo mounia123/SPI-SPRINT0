@@ -10,24 +10,32 @@
 					.when('/touteslesFormations', {
 						templateUrl: 'views/indexFormation.html',
 						controller: 'FormationMainCtrl',
-						controllerAs: 'Formation'
+						controllerAs: 'FormationMain'
 					})
 					.when('/formation/:codeFormation',{
 						templateUrl: 'views/InfoFormation.html',
 						controller: 'FormationInfoCtrl',
-						controllerAs: 'Formation'
+						controllerAs: 'FormationInfo'
 					})
 					.when('/ajouterFormation',{
 						templateUrl: 'views/AjouterFormation.html',
 						controller: 'FormationAjouterCtrl',
-						controllerAs: 'Formation'
+						controllerAs: 'FormationAjouter'
 					})
-					///update/:codeOldFormation:/:nomFormation/:diplome/:doubleDiplome/:n0Anne/:dateDebutAccreditation/:dateFinAccreditation'
-					.when('update/:codeFormation',{
+					.when('/update/:codeFormation',{
 						templateUrl: 'views/updateFormation.html',
 						controller: 'FormationUpdateCtrl',
-						controllerAs: 'Formation'
+						controllerAs: 'FormationUpdate'
 					});
-			} ]
+					// .when('/delete/:codeFormation',{
+					// 	templateUrl: 'views/infoFormation.html',
+					// 	controller: 'FormationDeleteCtrl',
+					// 	controllerAs: 'FormationDelete'
+					// });
+			}]
 	);
 }).call(this);
+
+
+
+
